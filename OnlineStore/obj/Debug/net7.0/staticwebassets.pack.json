@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\OnlineStore\\OnlineStore\\wwwroot\\Products\\Images\\0c6a6028-9549-43d6-a1e9-3bd8012f5e7c2ChocolateChipCookies.jpg",
+      "PackagePath": "staticwebassets\\Products\\Images\\0c6a6028-9549-43d6-a1e9-3bd8012f5e7c2ChocolateChipCookies.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\source\\repos\\OnlineStore\\OnlineStore\\wwwroot\\Products\\Images\\e88d83d3-b751-496b-b56e-21d7b45f9d1dGlass-and-bottle-of-milk-fe0997a.jpg",
+      "PackagePath": "staticwebassets\\Products\\Images\\e88d83d3-b751-496b-b56e-21d7b45f9d1dGlass-and-bottle-of-milk-fe0997a.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.OnlineStore.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.OnlineStore.props",
+      "PackagePath": "build\\OnlineStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.OnlineStore.props",
+      "PackagePath": "buildMultiTargeting\\OnlineStore.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.OnlineStore.props",
+      "PackagePath": "buildTransitive\\OnlineStore.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
