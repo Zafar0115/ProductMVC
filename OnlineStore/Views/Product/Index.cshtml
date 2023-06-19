@@ -19,7 +19,7 @@
                     <td>@product.Name</td>
                     <td>@product.Quantity</td>
                     <td>@product.Price</td>
-                    <td><img src="~/Products/Images/0c6a6028-9549-43d6-a1e9-3bd8012f5e7c2ChocolateChipCookies.jpg" width="50" height="60" alt="Product Image" /></td>
+                    <td><img src="~/Products/Images/@product.Img" width="50" height="40"  alt="Product Image" /></td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@product.Id">Edit</a> |
                         <a asp-action="Details" asp-route-id="@product.Id">Details</a> |

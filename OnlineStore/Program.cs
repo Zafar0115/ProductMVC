@@ -17,20 +17,20 @@ var builder = WebApplication.CreateBuilder(args);
 //    options.OnRejected = async (context, token) =>
 //    {
 //        context.HttpContext.Response.StatusCode = 429;
-//        if(context.Lease.TryGetMetadata(MetadataName.RetryAfter,out var retryAfter))
+//        if (context.Lease.TryGetMetadata(MetadataName.RetryAfter, out var retryAfter))
 //        {
 //            await context.HttpContext.Response.WriteAsync($"Too many requests. Please retry after {retryAfter.TotalSeconds} seconds");
 //        }
 //    };
 //    options.GlobalLimiter = PartitionedRateLimiter.Create<HttpContext, string>(httpContext =>
 //    RateLimitPartition.GetFixedWindowLimiter(
-//        partitionKey:httpContext.User.Identity?.Name?? httpContext.Request.Headers.Host.ToString(),
-//        factory: partition=>new FixedWindowRateLimiterOptions
+//        partitionKey: httpContext.User.Identity?.Name ?? httpContext.Request.Headers.Host.ToString(),
+//        factory: partition => new FixedWindowRateLimiterOptions
 //        {
-//            AutoReplenishment=true,
-//            PermitLimit=10,
-//            QueueLimit=0,
-//            Window=TimeSpan.FromSeconds(100)
+//            AutoReplenishment = true,
+//            PermitLimit = 10,
+//            QueueLimit = 0,
+//            Window = TimeSpan.FromSeconds(100)
 //        }));
 //});
 #endregion
@@ -101,8 +101,8 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkSto
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-
 app.UseHttpsRedirection();
+app.UseStaticFiles();
 
 app.UseAuthorization();
 app.UseRateLimiter();
