@@ -1,8 +1,8 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using OnlineStore.Data;
 using ProductMvc.CQRS.CommandQueries;
-using ProductMvc.Data;
 using ProductMvc.Models;
 using System;
 using System.IO;

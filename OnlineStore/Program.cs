@@ -4,9 +4,10 @@ using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProductMvc.Data;
+using OnlineStore.Models;
 using System.Reflection;
 using System.Threading.RateLimiting;
+using OnlineStore.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -88,7 +89,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 
-
+builder.Services.AddRazorPages();
 builder.Services.AddControllersWithViews();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -96,17 +97,21 @@ builder.Services.AddMediatR(config => config.RegisterServicesFromAssembly(Assemb
 
 builder.Services.AddDbContext<AppDbContext>(options =>
               options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppDbContext>();
+
+builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
-app.UseRateLimiter();
+//app.UseRateLimiter();
 
+app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",

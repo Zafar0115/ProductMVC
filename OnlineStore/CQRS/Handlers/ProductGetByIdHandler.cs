@@ -1,6 +1,6 @@
 ﻿using MediatR;
+using OnlineStore.Data;
 using ProductMvc.CQRS.CommandQueries;
-using ProductMvc.Data;
 using ProductMvc.Models;
 using System.Threading;
 using System.Threading.Tasks;
